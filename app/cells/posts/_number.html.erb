@@ -1,0 +1,4 @@
+<%= link_to "##{@post.id}", post_path(@post) %>
+<% if @user and @post.user == @user || @user.admin? %>
+  (<%= link_to 'удалить', post_path(@post), :confirm => 'Вы уверены?', :method => :delete %>)
+<% end %>

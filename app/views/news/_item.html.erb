@@ -1,0 +1,18 @@
+<% all_news.each do |news| %>
+<% div_for news do %>
+  <% for attribute in news.attributes -%>
+    <p>
+      <label><%= attribute.first %></label>: <%= attribute.last %>
+    </p>
+  <% end -%>
+  
+  <div class="actions">
+    <%= link_to 'Показать', news %>
+    <% if current_user && current_user.admin? %>
+      |
+      <%= link_to 'Редактировать', edit_news_path(news), :class => :edit %> |
+      <%= link_to 'Удалить', news, :confirm => 'Вы уверены?', :method => :delete, :class => :destroy %>
+    <% end %>
+  </div>
+<% end -%>
+<% end %>

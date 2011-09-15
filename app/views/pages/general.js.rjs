@@ -1,0 +1,4 @@
+page.get('Lightbox').
+  show(render('general')).
+  setTitle('Официальная информация').
+  resize(:width => '800px')

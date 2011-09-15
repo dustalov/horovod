@@ -1,0 +1,22 @@
+en:
+  pagination:
+    previous: "Previous"
+    next: "Next"
+
+  post:
+    text: "Text"
+    photo: "Photo"
+    audio: "Audio"
+    video: "Video"
+
+  activerecord:
+    attributes:
+      post:
+        user: "Author"
+        body: "Congratulation"
+      photo:
+        attachment: "Image"
+      audio:
+        attachment: "Sound"
+      video:
+        video_url: "Video-link"

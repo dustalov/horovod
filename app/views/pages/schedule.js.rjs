@@ -1,0 +1,4 @@
+page.get('Lightbox').
+  show(render('schedule')).
+  setTitle('Расписание мероприятия').
+  resize(:width => '640px')

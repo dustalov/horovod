@@ -1,0 +1,14 @@
+<article>
+  <div class='number'>
+    <%= render 'number' %>
+  </div>
+  <div class='content'>
+    <%= simple_format auto_link(@post.body) %>
+  </div>
+  <div class='author'>
+    <%= render 'author' %>
+  </div>
+  <div class='rating'>
+    <%= render 'rating' %>
+  </div>
+</article>

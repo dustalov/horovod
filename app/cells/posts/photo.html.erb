@@ -1,0 +1,27 @@
+<article>
+  <div class='number'>
+    <%= render 'number' %>
+  </div>
+  <div class='content'>
+    <div class='media'>
+      <%= link_to @post.attachment.url, :rel => 'lightbox', :id => "post#{@post.id}-link" do %>
+        <%= image_tag @post.attachment.url(:thumb) %>
+      <% end %>
+      <script type='text/javascript'>
+        //<![CDATA[
+          var imageID = 'post<%= @post.id %>-link';
+          $(imageID).set('href', '<%= @post.attachment.url(:lightbox) %>');
+        //]]>
+      </script>
+    </div>
+    <% if @post.body %>
+      <%= simple_format auto_link(@post.body) %>
+    <% end %>
+  </div>
+  <div class='author'>
+    <%= render 'author' %>
+  </div>
+  <div class='rating'>
+    <%= render 'rating' %>
+  </div>
+</article>

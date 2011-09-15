@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+  <!--[if IE]>
+    <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+    </script>
+  <![endif]-->
+  <title><%= controller.class.name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= rightjs_scripts %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<p id='notice'>
+  <%= notice %>
+</p>
+
+<%= yield %>
+
+</body>
+</html>

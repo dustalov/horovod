@@ -1,0 +1,4 @@
+page.get('Lightbox').
+  show(render('song')).
+  setTitle('«Каравай»').
+  resize(:width => '20em')

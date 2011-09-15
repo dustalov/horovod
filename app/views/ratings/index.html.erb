@@ -1,0 +1,31 @@
+<h1>Рейтинг поздравлений</h1>
+<table width='100%'>
+  <tbody>
+    <tr style='background-color: #ccc'>
+      <th style='text-align: center'>№</th>
+      <th style='text-align: left'>Автор поздравления</th>
+      <th style='text-align: center'>Группа</th>
+      <th style='text-align: center'>Рейтинг</th>
+    </tr>
+    <% @posts.each_with_index do |post, id| %>
+      <tr style='background-color: <%= cycle('#fff', '#eee') %>'>
+      <td style='text-align: center'>
+        <%= id + 1 %>
+      </td>
+      <td style='text-align: left'>
+        <%= post.author %>
+      </td>
+      <td style='text-align: center'>
+        <%= post.squad %>
+      </td>
+      <td style='text-align: center'>
+        <%= '%.2f' % (post.score * 100) %>%
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>
+  <b>Временная метка:</b>
+  <%= Time.now.strftime('%d.%m.%Y — %H:%M:%S') %>.
+</p>

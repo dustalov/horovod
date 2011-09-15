@@ -1,0 +1,10 @@
+<div id="filter">
+  &darr; Новые поздравления /
+  <%= link_to 'Показать лучшие', thebest_path %>
+</div>
+<%= render_cell :news, :recent, :news => @recent %>
+<section id='posts'>
+  <%= render_cell :posts, :summary, :posts => @posts, :user => current_user %>
+  <%= will_paginate @posts, :class => 'pages',
+    :previous_label => '&larr;', :next_label => '&rarr;' %>
+</section>

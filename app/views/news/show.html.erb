@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Текст:</b>
+  <%= @news.body %>
+</p>
+<p>
+  <b>Дата публикации:</b>
+  <%= @news.created_at.strftime('%d.%m.%Y') %>
+</p>
+
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Редактировать', edit_news_path(@news) %> |
+<% end %>
+<%= link_to 'К списку новостей', news_index_path %>

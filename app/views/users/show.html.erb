@@ -1,0 +1,16 @@
+<section id='yield'>
+  <h2><%= User.model_name.human %> №<%= @user.id %></h2>
+  <% [ :surname, :name, :squad ].each do |attribute| %>
+    <p>
+      <b><%= User.human_attribute_name(attribute) %></b>:
+      <%= @user.send(attribute) %>
+    </p>
+  <% end %>
+  <h3>Все сообщения</h3>
+  <% @user.posts.each do |post| %>
+    <p>
+      <%= link_to "##{post.id}", post_path(post) %>
+      <i>(рейтинг: <%= '%.2f' % post.score %>)</i>
+    </p>
+  <% end %>
+</section>

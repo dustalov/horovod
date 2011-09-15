@@ -1,0 +1,4 @@
+<%= render_cell :news, :recent, :news => @recent %>
+<section id='posts'>
+  <%= render_cell :posts, :single, :post => @post, :user => current_user %>
+</section>

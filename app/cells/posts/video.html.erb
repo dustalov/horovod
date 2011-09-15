@@ -1,0 +1,22 @@
+<article>
+  <div class='number'>
+    <%= render 'number' %>
+  </div>
+  <div class='content'>
+    <div class='media'>
+      <%= link_to @post.video_url, :target => '_blank', :rel => 'lightbox' do %>
+        <%= image_tag @post.thumbnail_url, :alt => @post.title %>
+        <div class="play"></div>
+      <% end %>
+    </div>
+    <% if @post.body %>
+      <%= simple_format auto_link(@post.body) %>
+    <% end %>
+  </div>
+  <div class='author'>
+    <%= render 'author' %>
+  </div>
+  <div class='rating'>
+    <%= render 'rating' %>
+  </div>
+</article>

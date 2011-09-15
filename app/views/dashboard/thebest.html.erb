@@ -1,0 +1,8 @@
+<div id="filter">
+  &darr; Лучшие поздравления /
+  <%= link_to 'Показать новые', root_path %>
+</div>
+<%= render_cell :news, :recent, :news => @recent %>
+<section id='posts'>
+  <%= render_cell :posts, :summary, :posts => @posts, :user => current_user %>
+</section>

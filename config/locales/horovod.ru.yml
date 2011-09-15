@@ -1,0 +1,69 @@
+ru:
+  horovod:
+    title: "Хоровод 2010"
+    vkontakte: "Встреча в Контакте"
+
+  video:
+    supported: "Поддерживаются ссылки с <b>YouTube</b> и <b>Vimeo</b>."
+
+  flash:
+    congratulated: "Поздравление добавлено."
+    rated: "Оценка выставлена."
+
+  errors:
+    too_fast: "За одно поздравление можно голосовать не чаще, чем раз в сутки."
+    video_not_exists: "может быть некорректной, проверьте правильность"
+
+  devise:
+    sign_in: "Войти"
+    sign_up: "Зарегистрироваться"
+    forgot: "Забыли пароль?"
+    change_password: "Изменить пароль"
+    sign_out: "Выйти"
+    
+    session:
+      destroy: "Выход"
+
+  activerecord:
+    models:
+      user: "Пользователь"
+      news: "Новость"
+      post: "Поздравление"
+      text: "Текст"
+      photo: "Фото"
+      audio: "Аудио"
+      video: "Видео"
+      rating: "Оценка"
+
+    attributes:
+      post:
+        user: "Автор"
+        body: "Текст поздравления"
+      photo:
+        attachment: "Изображение"
+      audio:
+        attachment: "Звук"
+      video:
+        video_url: "Видеоссылка"
+      rating:
+        score: "Оценка"
+        user: "Пользователь"
+      user:
+        email: "Электропочта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить меня!"
+        surname: "Фамилия"
+        name: "Имя"
+        squad: "Номер группы"
+        posts: "Количество поздравлений"
+        position: "Место в рейтинге"
+
+  helpers:
+    submit:
+      post:
+        create: "Поздравить!"
+        update: "Сохранить"
+      rating:
+        create: "Проголосовать"

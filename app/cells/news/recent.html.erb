@@ -1,0 +1,29 @@
+<section id='news'>
+  <%= link_to news_index_path do %>
+    <h1>Новости</h1>
+  <% end %>
+    <article>
+      <%= link_to 'Что такое «Хоровод»?', info_general_path, :remote => true %>
+      <p>Краткая информация о мероприятии.</p>
+    </article>
+    <article>
+      <%= link_to 'Расписание', info_schedule_path, :remote => true %>
+      <p>Подробности о ходе проведения «Хоровода».</p>
+    </article>
+    <article>
+      <%= link_to 'Хороводная песня', info_song_path, :remote => true %>
+      <p>Текст поздравительной песни.</p>
+    </article>
+    <article>
+      <a href="http://vkontakte.ru/event20122527"
+        rel="friend"
+        target="_blank">Наша встреча в Контакте</a>
+      <p>Не забудьте посетить!</p>
+    </article>
+  <% @news.each do |news| %>
+    <article>
+      <%= link_to news.created_at.strftime('%d.%m.%Y в %H:%M'), news_path(news) %>
+      <%= simple_format auto_link(news.body) %>
+    </article>
+  <% end %>
+</section>

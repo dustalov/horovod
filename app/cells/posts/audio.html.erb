@@ -1,0 +1,25 @@
+<article>
+  <div class='number'>
+    <%= render 'number' %>
+  </div>
+  <div class='content'>
+    <div id='player<%= @post.id %>'>
+      Ссылка на поздравление: <%= link_to @post.attachment.url, @post.attachment.url %>
+    </div>
+    <script type="text/javascript">
+      swfobject.embedSWF('/swfs/google-audio-player.swf',
+                         'player<%= @post.id %>',
+                         '620', '27', '10.0.0', 'expressInstall.swf',
+                         { audioUrl: '<%= @post.attachment.url %>' });
+    </script>
+    <% if @post.body %>
+      <%= simple_format auto_link(@post.body) %>
+    <% end %>
+  </div>
+  <div class='author'>
+    <%= render 'author' %>
+  </div>
+  <div class='rating'>
+    <%= render 'rating' %>
+  </div>
+</article>

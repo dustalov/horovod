@@ -1,0 +1,3 @@
+<% @posts.each do |post| %>
+  <%= render_cell :posts, :single, :post => post, :user => @user %>
+<% end %>

@@ -1,0 +1,3 @@
+<%= link_to @post.author, user_profile_path(@post.user),
+  :'data-tooltip' => true,
+  :title => "<b>#{@post.author}</b> из группы #{@post.squad}.".html_safe %>

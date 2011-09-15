@@ -1,0 +1,27 @@
+<h1>Список новостей</h1>
+
+<table>
+  <tr>
+    <th>Текст</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @news.each do |news| %>
+  <tr>
+    <td><%= news.body %></td>
+    <td><%= link_to 'Показать', news %></td>
+    <% if current_user && current_user.admin? %>
+      <td><%= link_to 'Редактировать', edit_news_path(news) %></td>
+      <td><%= link_to 'Удалить', news, :confirm => 'Вы уверены?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Добавить новость', new_news_path %>
+<% end %>

@@ -1,0 +1,27 @@
+<span data-tooltip='true'
+  title='Рейтинг поздравления: <b><%= '%.0f' % (@post.score * 100) %>%</b>.<br />
+         Понравилось: <b><%= @post.ratings.count %></b>.'>рейтинг:</span>
+<span id='<%= "post#{@post.id}-rating" %>'>
+  <%= rater_display(@post.score * 5) %>
+  <% unless !@user || !@post.rateable?(@user) %>
+    <%= link_to('Мне нравится!', rate_post_path(@post), :id => "post#{@post.id}-rate") %>
+    <script type='text/javascript'>
+      //<![CDATA[
+        var linkID = $('<%= "post#{@post.id}-rate" %>');
+        linkID.on('click', function() {
+          new Xhr('<%= rate_post_path(@post) %>', {
+            method: 'post',
+            spinner: '<%= "post#{@post.id}-spinner" %>',
+            onComplete: function() {
+              var spanID = $('<%= "post#{@post.id}-rating" %>');
+              spanID.html('изменён, обновите страницу.');
+            }
+          }).send();
+          return false;
+        });
+      //]]>
+    </script>
+  <% end %>
+</span>
+<%= image_tag 'spinner.gif', :style => 'display: none',
+  :id => "post#{@post.id}-spinner", :class => 'spinner' %>
